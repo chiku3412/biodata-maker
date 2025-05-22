@@ -1,0 +1,14 @@
+@use '../public/assets/scss/modal.scss';
+@use '../public/assets/scss/common.scss';
+
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '../node_modules/lightgallery/css/lightgallery-bundle.min.css';
+
+
+
+html {
+    scroll-behavior: smooth;
+}

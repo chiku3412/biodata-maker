@@ -1,0 +1,77 @@
+@if (showAction) {
+    <div class="dialog_header">
+        <h5 class="dialog_header-title text-2xl font-semibold">
+            Preview Data    
+        </h5>
+        <a class="dialog_header-icon" mat-dialog-close>
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+    </div>
+}
+<div #previewSection class="relative preview-section" [ngClass]="isMobileMode ? 'w-[595px] h-auto mx-auto' : 'w-full'">
+    @if (selectedImage) {
+        <img [src]="selectedImage" [alt]="selectedImage" class="rounded-md w-full h-full" />
+    } @else {
+        <img src="assets/images/layouts/1.jpg" alt="" class="rounded-md w-full h-full" />
+    }
+    <!-- <div  class="rounded-md relative w-full h-full bg-cover bg-center" [ngStyle]="{'background-image': selectedImage ? 'url(' + selectedImage + ')' : 'url(assets/images/layouts/1.jpg)'}">
+    </div> -->
+    <div class="w-full justify-between absolute top-0 left-0 p-8">
+        <div class="flex gap-2">
+            <div class="w-3/4">
+                @if (displayedPersonalDetails.length > 0) {
+                    <div class="mb-3 font-semibold pb-2.5 tracking-wide relative before:contents-['*'] before:absolute before:left-0 before:-bottom-[6px] before:h-1 before:w-10 before:bg-black after:contents-['*'] after:absolute after:left-0 after:-bottom-[4px] after:h-[1px] after:w-[95%] after:bg-[#333]">
+                        <h3 class="text-2xl font-bold">Personal Details</h3>
+                    </div>
+                    @for (field of displayedPersonalDetails; track field.label) {
+                    <div>
+                        <span class="font-bold text-lg">{{ field.label }} : </span> <span class="font-semibold capitalize">{{ field.value }}</span>
+                    </div>
+                    }
+                }
+            </div>
+            <div class="w-1/4">
+                @if(url) {
+                    <img [src]="url" />
+                }
+            </div>
+        </div>
+        <div class="mt-5">
+                @if (displayedFamilyDetails.length > 0) {
+                    <div class="mb-3 font-semibold pb-2.5 tracking-wide relative before:contents-['*'] before:absolute before:left-0 before:-bottom-[6px] before:h-1 before:w-10 before:bg-black after:contents-['*'] after:absolute after:left-0 after:-bottom-[4px] after:h-[1px] after:w-[95%] after:bg-[#333]">
+                        <h3 class="text-2xl font-bold">Family Details</h3>
+                    </div>
+                    @for (field of displayedFamilyDetails; track field.label) {
+                    <div>
+                        <span class="font-bold text-lg">{{ field.label }} : </span> <span class="font-semibold capitalize">{{ field.value }}</span>
+                    </div>
+                    }
+                }
+                @if (displayedContactDetails.length > 0) {
+                    <div class="mb-3 font-semibold pb-2.5 tracking-wide relative before:contents-['*'] before:absolute before:left-0 before:-bottom-[6px] before:h-1 before:w-10 before:bg-black after:contents-['*'] after:absolute after:left-0 after:-bottom-[4px] after:h-[1px] after:w-[95%] after:bg-[#333]">
+                        <h3 class="text-2xl font-bold">Contact Details</h3>
+                    </div>
+                    @for (field of displayedContactDetails; track field.label) {
+                    <div>
+                        <span class="font-bold text-lg">{{ field.label }} : </span> <span class="font-semibold capitalize">{{ field.value }}</span>
+                    </div>
+                    }
+                }
+        </div>
+    </div>
+</div>
+@if (showAction) {
+<div class="sm:flex py-4 px-3 justify-between gap-3 space-y-2 sm:space-y-0">
+    <button type="button" class="w-full sm:w-auto cursor-pointer bg-white text-black border border-black py-2 px-10 hover:text-white hover:bg-black transition-all duration-500 rounded-lg font-semibold" mat-dialog-close>
+        Cancel
+    </button>
+    <div class="sm:flex gap-3 justify-end space-y-2 sm:space-y-0">
+        <button type="button" (click)="downloadAsImage()" class="w-full sm:w-auto cursor-pointer bg-black text-white border border-black py-2 px-10 hover:text-black hover:bg-transparent transition-all duration-500 rounded-lg font-semibold">
+            Download Image
+        </button>
+        <button (click)="downloadAsPdf()" type="button" class="w-full sm:w-auto cursor-pointer bg-black text-white border border-black py-2 px-10 hover:text-black hover:bg-transparent transition-all duration-500 rounded-lg font-semibold">
+            Download PDF
+        </button>
+    </div>
+</div>
+}

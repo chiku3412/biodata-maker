@@ -1,0 +1,59 @@
+body {
+    background: linear-gradient(180deg,#f2f3fb,rgba(255,255,255,0) 100%);
+}
+
+// Header section css
+.header-section {
+    .menu-bar {
+        a {
+           &.active {
+            font-weight: 600;
+            color: #000;
+           } 
+        }
+    }
+}
+
+// Accordion CSS
+.mat-accordion {
+    .mat-expansion-panel {
+        box-shadow: unset !important;
+        border: 1px solid #000;
+        .mat-expansion-indicator {
+            &::after, &::before {
+                border-color: #000 !important;
+            }
+        }
+        .mat-expansion-panel-header {
+            &.mat-expanded {
+                background-color: #000;
+                border-radius: unset !important;
+                .mat-expansion-panel-header-title {
+                    color: #fff;
+                }
+                .mat-expansion-indicator {
+                    &::after, &::before {
+                        border-color: #fff !important;
+                    }
+                }
+            }
+        }
+        .mat-expansion-panel-body {
+            padding: 16px 24px !important;
+        }
+    }
+}
+
+.preview-section {
+    height: 28.25cm;
+}
+
+.pricing-item .pricing-body .pricing-list ul li {
+    background-image: url('../images/icon/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 24px auto;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    padding-left: 35px;
+}

@@ -1,0 +1,72 @@
+<div class="dialog_header">
+    <h5 class="dialog_header-title text-2xl font-semibold">
+        Contact Us
+    </h5>
+    <a class="dialog_header-icon" mat-dialog-close>
+        <i class="fa-solid fa-xmark"></i>
+    </a>
+</div>
+<div #previewSection class="dialog_content">
+    <div class="w-full">
+        <form class="form-section space-y-2">
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <div class="label font-semibold">
+                        First Name
+                    </div>
+                    <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                        <input type="text" matInput />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="label font-semibold">
+                        Last Name
+                    </div>
+                    <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                        <input type="text" matInput />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="label font-semibold">
+                        Phone Number
+                    </div>
+                    <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                        <input type="text" matInput />
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div class="label font-semibold">
+                        Email Address
+                    </div>
+                    <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                        <input type="email" matInput />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <div class="label font-semibold">
+                    Subject
+                </div>
+                <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                    <input type="text" matInput />
+                </mat-form-field>
+            </div>
+            <div>
+                <div class="label font-semibold">
+                    Message
+                </div>
+                <mat-form-field class="w-full" appearance="outline" [subscriptSizing]="'dynamic'">
+                    <textarea matInput rows="5" placeholder="Message"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="sm:flex py-4 px-3 justify-end gap-3 space-y-2 sm:space-y-0">
+    <button type="button" class="w-full sm:w-auto cursor-pointer bg-black text-white border border-black py-2 px-10 hover:text-black hover:bg-white transition-all duration-500 rounded-lg font-semibold">
+        Submit
+    </button>
+    <button type="button" class="w-full sm:w-auto cursor-pointer bg-white text-black border border-black py-2 px-10 hover:text-white hover:bg-black transition-all duration-500 rounded-lg font-semibold" mat-dialog-close>
+        Cancel
+    </button>
+</div>

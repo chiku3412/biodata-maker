@@ -1,0 +1,113 @@
+<div id="headerSection" class="bg-transparent sticky top-0 z-50">
+    <div class="container mx-auto sm:mt-10 bg-white rounded-lg shadow-md">
+        <nav class="relative px-4 py-4 flex justify-between items-center">
+            <div class="flex gap-2 items-center">
+                <img src="assets/images/icon/logo-icon.png" class="w-14" />
+                <a class="text-2xl sm:text-3xl leading-none font-fredericka">
+                    Resume Maker
+                </a>
+            </div>
+            <div class="lg:hidden">
+                <button class="navbar-burger flex items-center text-blue-600 p-3">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6 menu-bar">
+                <li>
+                    <a (click)="scrollToSection('home')" [ngClass]="{ 'active': activeSection === 'home' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        Home
+                    </a>
+                </li>
+                <li class="text-gray-300">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('about')" [ngClass]="{ 'active': activeSection === 'about' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        About Us
+                    </a>
+                </li>
+                <li class="text-gray-300">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('selectFormat')" [ngClass]="{ 'active': activeSection === 'selectFormat' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        Select Format
+                    </a>
+                </li>
+                <li class="text-gray-300">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('createResume')" [ngClass]="{ 'active': activeSection === 'createResume' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        Create Resume
+                    </a>
+                </li>
+                <li class="text-gray-300">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('faqs')" [ngClass]="{ 'active': activeSection === 'faqs' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        Faqs
+                    </a>
+                </li>
+                <li class="text-gray-300">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('contact')" [ngClass]="{ 'active': activeSection === 'contact' }" class="text-lg cursor-pointer text-gray-400 hover:text-black">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+            <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 text-sm text-black hover:text-white border hover:bg-black cursor-pointer border-black hover:border-black font-bold rounded-md transition duration-200">Sign In</a>
+            <a class="hidden lg:inline-block py-2 px-6 bg-black hover:bg-white text-sm text-white hover:text-black border-black border cursor-pointer font-bold rounded-md transition duration-200">Sign Up</a>
+        </nav>
+        <div class="navbar-menu relative z-50 hidden">
+            <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+            <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+                <div class="flex items-center mb-8">
+                    <a class="mr-auto text-2xl leading-none logo">
+                        Resume Maker
+                    </a>
+                    <button class="navbar-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('home')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">
+                                Home
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('about')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">About Us</a>
+                        </li>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('selectFormat')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">Select Format</a>
+                        </li>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('createResume')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">Create Resume</a>
+                        </li>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('faqs')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">Faqs</a>
+                        </li>
+                        <li class="mb-1">
+                            <a (click)="scrollToSection('contact')" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-black rounded cursor-pointer">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-auto">
+                    <div class="pt-6">
+                        <a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl">Sign in</a>
+                        <a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl">Sign Up</a>
+                    </div>
+                    <p class="my-4 text-xs text-center text-gray-400">
+                        <span>Copyright © 2025</span>
+                    </p>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
